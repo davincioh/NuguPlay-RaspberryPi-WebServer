@@ -115,7 +115,7 @@ Backend proxy API Reference
 --
 API Ref를 참고하여 응용 개발을 해보세요.
 
- - [Backend proxy API Reference](https://developers.nugu.co.kr/docs/create-plays-with-play-builder/backend-proxy-api-reference.html#backend-proxy-api-reference)
+ - [Backend proxy API Reference](https://developers-doc.nugu.co.kr/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy)
  
 API Sample
 
