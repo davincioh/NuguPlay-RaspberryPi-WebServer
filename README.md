@@ -6,6 +6,8 @@ NUGU developers에서는 외부 연동 서버(Backend proxy)와 연동되어 필
 --
 Play에서는 사용자의 발화를 분석한 내용을 기반으로 적절한 응답을 내보내 주거나 동작을 수행합니다.
 
+![구조Index](./images/img01.png)
+
 이 응답에 필요한 정보가 외부 서버로부터 가져와야 하는 경우는 REST API를 통해 요청해야 하며,디바이스를 동작시키는 명령을 정의하는 것도 Backend proxy(라즈베리파이)에서 처리해야 합니다.
 
 
@@ -30,9 +32,12 @@ Play에서는 사용자의 발화를 분석한 내용을 기반으로 적절한 
 
 - [외부 연동 서버(Backend proxy) 가이드](https://developers.nugu.co.kr/docs/create-plays-with-play-builder/use-backend-proxy.html#use-backend-proxy)
 
-
+![서버설명](./images/img02.jpeg)
 
  - 01 외부연동 서버 설정에서 Web URL에 라즈베리파이의 주소(DDNS)를 입력해 줍니다.
+ 
+![주소입력](./images/img03.jpeg)
+ 
  - 02 Custom Actions 에서 외부 Proxy 사용여부를 모두 ON 해줍니다. 위 예제와 같이 사용자가 "불켜줘" 를 발화하면 "OnLED" 액션이 수행되고 라즈베리파이에 설치된 express 서버에 접속과 의도를 전달합니다. 
 전달 값 : http://개인아이디.iptime.org/OnLED
 
@@ -40,7 +45,7 @@ Play에서는 사용자의 발화를 분석한 내용을 기반으로 적절한 
 실습하기 (라즈베리파이 웹서버 코드작성 및 실행)
 --
 
-- javascript 파일생성 및 코드작성
+- 01 javascript 파일생성 및 코드작성
 <pre><code> $ vim server.js
 </code></pre>
 
@@ -99,11 +104,11 @@ led.digitalWrite(0);
 });
 ```
 
-- 웹서버 실행
+- 02 웹서버 실행
 <pre><code> $ sudo node server.js
 </code></pre>
 
-
+![웹서버실행](./images/img04.png)
 
 
 Backend proxy API Reference
@@ -112,7 +117,9 @@ API Ref를 참고하여 응용 개발을 해보세요.
 
  - [Backend proxy API Reference](https://developers.nugu.co.kr/docs/create-plays-with-play-builder/backend-proxy-api-reference.html#backend-proxy-api-reference)
  
-- Request Sample
+API Sample
+
+- 01 Request Sample
 
 
 
@@ -158,7 +165,7 @@ Authorization: token TOKEN_STRING
 ```
 
 
-- Response Sample
+- 02 Response Sample
 
 
 ```
